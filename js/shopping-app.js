@@ -1,43 +1,6 @@
-////////////////// All fetches /////////////////
 
-/////////////// fetch products //////////////////////
-
-// fetch for all products
-fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
-
-// fetch for all categories
-fetch('https://fakestoreapi.com/products/categories')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
-
-// fetch for certain categories
-fetch('https://fakestoreapi.com/products/category/jewelery')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
-
-// fetch for single products
-fetch('https://fakestoreapi.com/products/1')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
-
-// fetch for sort results /
-fetch('https://fakestoreapi.com/products?sort=desc')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
 
 /////////////////////// fetch carts ////////////////////
-
-// fetch for all carts
-fetch('https://fakestoreapi.com/carts')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
-
-// fetch for a single cart
-fetch('https://fakestoreapi.com/carts/5')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
 
 // fetch for sorting carts
 fetch('https://fakestoreapi.com/carts?sort=desc')
@@ -87,6 +50,8 @@ fetch('https://fakestoreapi.com/auth/login',{
 
 
 ///////////////////////// Functions /////////////////////////////////////
+
+/// products
 const getProducts = async () => {
     const response = await fetch('https://fakestoreapi.com/products');
     const products = await response.json();
@@ -111,7 +76,24 @@ const getSingleProduct = async () => {
     return singleProduct;
 }
 
+const getSortedResults = async () => {
+    const response = await fetch('https://fakestoreapi.com/products?sort=desc');
+    const sortedProduct = await response.json();
+    return sortedProduct;
+}
 
+/// fetch for carts
+const getAllCarts = async () => {
+    const response = await fetch('https://fakestoreapi.com/carts');
+    const allCarts = await response.json();
+    return allCarts;
+}
+
+const getSingleCart = async () => {
+    const response = await fetch('https://fakestoreapi.com/carts/5');
+    const singleCart = await response.json();
+    return singleCart;
+}
 
 
 
