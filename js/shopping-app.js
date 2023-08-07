@@ -1,17 +1,5 @@
 
 
-/////////////////////// fetch carts ////////////////////
-
-// fetch for sorting carts
-fetch('https://fakestoreapi.com/carts?sort=desc')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
-
-// fetch get user carts
-fetch('https://fakestoreapi.com/carts/user/2')
-    .then(res=>res.json())
-    .then(json=>console.log(json))
-
 //////////////////////// fetch users /////////////////////////////
 
 // fetch get all users
@@ -95,8 +83,17 @@ const getSingleCart = async () => {
     return singleCart;
 }
 
+const getSortedCarts = async () => {
+    const response =await fetch('https://fakestoreapi.com/carts?sort=desc');
+    const sortedCarts = await response.json();
+    return sortedCarts;
+}
 
-
+const getUserCarts = async () => {
+    const response =await fetch('https://fakestoreapi.com/carts/user/2');
+    const userCarts = await response.json();
+    return userCarts;
+}
 
 
 
